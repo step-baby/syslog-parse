@@ -1,0 +1,23 @@
+[package]
+name = "syslog_parse"
+version = "1.0.0"
+authors = ["step-baby <3528004749@qq.com>"]
+description = "parse syslog，check syslog format"
+edition = "2021"
+keywords = ["syslog", "syslog_parse", "syslog-parse"]
+documentation = "https://docs.rs/syslog-parse"
+repository = "https://github.com/step-baby/syslog-parse.git"
+readme = "README.md"
+license = "MIT AND Apache-2.0"
+
+[lib]
+name = "syslog_parse"
+
+[dependencies]
+nom = "7.1.1"
+serde = "1.0"
+serde_derive = "1.0"
+serde_json = "1.0"
+chrono = "0.4.19"
+thiserror = "1.0.31"
+strum_macros = "0.22.0"
