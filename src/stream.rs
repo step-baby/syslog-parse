@@ -41,9 +41,9 @@ impl MsgStream {
         self.last_parse_time = Local::now();
         let next_msg = if self.last_msg.ends_with('<') {
             self.last_msg.pop();
-            vec!["<".as_bytes().to_vec(), self.res.clone(), value].concat()
+            ["<".as_bytes().to_vec(), self.res.clone(), value].concat()
         } else {
-            vec![self.res.clone(), value].concat()
+            [self.res.clone(), value].concat()
         };
         let next_msg = String::from_utf8_lossy(&next_msg);
         let mut next_msg = next_msg.as_ref();
@@ -86,7 +86,7 @@ impl Iterator for MsgStream {
         let now = Local::now();
         let next_msg = if self.last_msg.ends_with('<') {
             self.last_msg.pop();
-            vec!["<".as_bytes().to_vec(), self.res.clone()].concat()
+            ["<".as_bytes().to_vec(), self.res.clone()].concat()
         } else {
             self.res.clone()
         };
